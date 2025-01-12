@@ -1,66 +1,33 @@
+// pages/cate/cate.js
 Page({
-  data: {
-    num: 1,
-    userInfo: {
-      name: 'tom',
-      age: 10,
-      test: '111'
-    }
-  },
-  // 更新 userInfo
-  updateUserInfo() {
-    // 新增单个 / 多个属性
-    // this.setData({
-    //   // 如果给对象新增属性,可以将 key 写成数据路径的方式 a.b.c
-    //   'userInfo.name': 'tom',
-    //   'userInfo.age': 10
-    // })
-    // 修改单个 / 多个属性
-    // this.setData({
-    //   // 如果修改对象属性,可以将 key 写成数据路径的方式 a.b.c
-    //   'userInfo.name': 'jarry',
-    //   'userInfo.age': 30
-    // })
-
-    // 如果修改的数据很多,每次都写数据路径,就太麻烦了
-    // ①可以使用ES6提供的展开运算符 和 Object.assign()
-    // const userInfo = {
-    //   ...this.data.userInfo,
-    //   name: 'jerry',
-    //   age: 18
-    // }
-
-    // ②Object.assign() 将多个对象合并为一个对象
-    // const userInfo = Object.assign(this.data.userInfo, {name: 'jerry'},{age: 18})
-    // this.setData({
-    //   userInfo
-    // })
-
-    // 删除单个属性
-    // delete this.data.userInfo.age
-    // console.log(this.data.userInfo)
-    // this.setData({
-    //   userInfo: this.data.userInfo
-    // })
-
-    // 删除多个属性
-    const {age, test, ...rest} = this.data.userInfo
-    this.setData({
-      userInfo: rest
-    })
+  btnHandler(event) {
+    // currentTarget 事件绑定者,也就是指: 哪个组件绑定了当前事件处理函数
+    // target 事件触发者,也就是指: 哪个组件触发了当前的处理函数
+    // currentTarget 和 target 都是指按钮,因为是按钮绑定的事件处理函数,同时点击按钮触发事件处理函数
+    // 这时候通过谁来获取数据都可以
+    console.log(event.currentTarget.dataset.id)
+    console.log(event.target.dataset.name)
   },
 
+  // view 绑定的事件处理
+  parentHandler(event){
+    // 点击蓝色区域(不点击按钮)
+    //  currentTarget 事件绑定者: view
+    //  target 事件触发者: view
+    // currentTarget 和 target 都是指view,如果想获取 view 身上的数据,使用谁都可以
 
-  updateNum() {
-    // 通过复制的方式直接修改数据
-    // 能够修改数据,但是不能改变页面上的数据
-    // this.data.num += 1
-    // console.log(this.data.num)
+    // 点击按钮(不点击蓝色区域)
+    //  currentTarget 事件绑定者: view
+    //  target 事件触发者: 按钮
+    // 如果想要获取的是事件触发者本身的数据,就需要使用target
+    console.log(event)
 
-    this.setData({
-      // key: 是需要更新的数据
-      // value: 是最新的值
-      num: this.data.num + 1
-    })
+    // 在传递参数的时候,如果自定义属性是多个词,单词与单词直接使用中划线 - 进行连接
+    // 在事件对象中会被转换为小驼峰写法.
+    console.log(event.currentTarget.dataset.parentId)
+
+    // 在传递参数的时候,如果自定义属性是多个单词,单词如果使用的是小驼峰写法
+    // 在事件对象中会被转化为全部小写的
+    console.log(event.currentTarget.dataset.parentname)
   }
 })

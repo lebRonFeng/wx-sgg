@@ -1,8 +1,8 @@
-<view>{{ num }}</view>
-<button bindtap="updateNum">更新num</button>
-<view class="line"></view>
+<!--pages/cate/cate.wxml-->
 
+<!-- 如果需要进行时间传参,需要在组件上通过 data- 的方式传递数据 -->
+<!-- <button bindtap="btnHandler" data-id="1" data-name="tom">按钮</button> -->
 
-<view>{{ userInfo.name }}</view>
-<view>{{ userInfo.age }}</view>
-<button type="warn" bindtap="updateUserInfo">修改对象类型数据</button>
+<view bindtap="parentHandler" data-parent-id="1" data-parentName="tom">
+  <button data-id="1" data-name="tom">按钮</button>
+</view>
