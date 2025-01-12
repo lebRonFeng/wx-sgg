@@ -1,0 +1,18 @@
+<!-- 内容展示 -->
+<view>{{ school }}</view>
+<view>{{ obj.name }}</view>
+
+<!-- 绑定属性值,如果需要动态绑定一个变量,属性也需要使用双大括号进行包裹 -->
+<view id="{{ id }}">绑定属性值</view>
+<!-- 如果属性值是布尔值,也需要使用双大括号进行包裹 -->
+<checkbox checked="{{ isChecked }}" />
+
+<view>{{ id + 1 }}</view>
+<view>{{ id -1 }}</view>
+<view>{{ id === 1 ? '等于': '不等于' }}</view>
+<view>{{ id === 1 }}</view>
+
+<!-- <view>{{ if(id === 1){} }}</view> -->
+<!-- <view>{{ for(const i = 0; i <= 10; i++){} }}</view> -->
+<!-- 不报错也不展示 -->
+<view>{{ obj.name.toUpperCase() }}</view>

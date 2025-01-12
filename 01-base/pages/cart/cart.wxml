@@ -1,0 +1,6 @@
+
+<!-- <button mark:id="1" mark:name="tom" bindtap="btnHandler">按钮</button> -->
+
+<view mark:parentid="11" mark:name="tomm" bindtap="btnHandler">
+  <button mark:id="1" mark:name="tom">按钮</button>
+</view>

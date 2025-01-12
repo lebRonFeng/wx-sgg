@@ -1,0 +1,8 @@
+<view>{{ num }}</view>
+<button bindtap="updateNum">更新num</button>
+<view class="line"></view>
+
+
+<view>{{ userInfo.name }}</view>
+<view>{{ userInfo.age }}</view>
+<button type="warn" bindtap="updateUserInfo">修改对象类型数据</button>

@@ -1,0 +1,13 @@
+// 在导入样式文件以后，必须得以分号结尾，否则会出现异常
+@import "./iconfont/iconfont.scss";
+
+input {
+  border: 1px solid #ccc;
+}
+
+.line{
+  height: 10rpx;
+  width: 100%;
+  background: skyblue;
+  margin: 30rpx 0;
+}

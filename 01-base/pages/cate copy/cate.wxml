@@ -1,0 +1,8 @@
+<!--pages/cate/cate.wxml-->
+
+<!-- 如果需要进行时间传参,需要在组件上通过 data- 的方式传递数据 -->
+<!-- <button bindtap="btnHandler" data-id="1" data-name="tom">按钮</button> -->
+
+<view bindtap="parentHandler" data-parent-id="1" data-parentName="tom">
+  <button data-id="1" data-name="tom">按钮</button>
+</view>
