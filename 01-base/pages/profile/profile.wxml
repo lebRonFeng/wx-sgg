@@ -1,2 +1,20 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<!-- <view wx:for="{{fruitList}}" wx:key="id">{{item.name}}-{{index}}</view>
+<view wx:for="{{nameList}}" wx:key="*this">{{item}}</view> -->
+
+<!-- <view wx:for="{{obj}}" wx:key="key" wx:for-item="value" wx:for-index="key">{{value}}-{{key}}</view> -->
+
+<!-- <view wx:for="{{fruitList}}" wx:key="id" wx:for-item="fruitItem" wx:for-index="i">
+  <view>名字：{{fruitItem.name}}</view>
+  <view>价格：{{fruitItem.price}}</view>
+</view> -->
+
+<!-- <block wx:for="{{fruitList}}" wx:key="id" wx:for-item="fruitItem" wx:for-index="i">
+  <view>名字：{{fruitItem.name}}</view>
+  <view>价格：{{fruitItem.price}}</view>
+</block> -->
+<view wx:if="{{ val === 1}}">val为1展示，当前：{{val}}</view>
+<view wx:elif="{{ val === 2}}">val为2展示，当前：{{val}}</view>
+<view wx:else="{{ val === 3}}">val为3展示，当前：{{val}}</view>
+
+<view hidden="{{!isFlag}}">hidden展示</view>
+<button bindtap="add1">+1</button>

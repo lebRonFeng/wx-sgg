@@ -5,7 +5,9 @@ Page({
       name: 'tom',
       age: 10,
       test: '111'
-    }
+    },
+    list: [1, 2, 3]
+    // list: [{name:'tom',age: 10}]
   },
   // 更新 userInfo
   updateUserInfo() {
@@ -44,7 +46,11 @@ Page({
     // })
 
     // 删除多个属性
-    const {age, test, ...rest} = this.data.userInfo
+    const {
+      age,
+      test,
+      ...rest
+    } = this.data.userInfo
     this.setData({
       userInfo: rest
     })
@@ -61,6 +67,39 @@ Page({
       // key: 是需要更新的数据
       // value: 是最新的值
       num: this.data.num + 1
+    })
+  },
+  // 更新数组方法
+  updateList() {
+    // 新增
+    // 第一种：使用push
+    // this.data.list.push(4)
+
+    // 第二种：使用concat
+    // const newList = this.data.list.concat(5)
+
+    // 第三种：使用解构赋值
+    // const newList = [...this.data.list, 6]
+    // this.setData({
+    //   list: newList
+    // })
+
+    // 更改
+    // this.setData({
+    //   'list[0].name': 'jerry'
+    // })
+
+    // 删除
+    // 第一种删除splice
+    // this.data.list.splice(1,1)
+    // this.setData({
+    //   list: this.data.list
+    // })
+
+    // 第二种删除filter
+    const newList = this.data.list.filter(item => item !== 2)
+    this.setData({
+      list: newList
     })
   }
 })

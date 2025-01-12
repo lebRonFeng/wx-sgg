@@ -1,6 +1,10 @@
+<!-- 单项绑定：数据能够影响页面，但是页面更新不会影响到数据 -->
+<!-- <input type="text" value="{{value}}"/> -->
 
-<!-- <button mark:id="1" mark:name="tom" bindtap="btnHandler">按钮</button> -->
+<!-- 双项绑定：数据能够影响页面，但是页面更新也会影响到数据 -->
+<!-- 如果要实现简易双向绑定，需要在对应的属性之前添加 model: -->
+<!-- <input type="text" model:value="{{value}}"/> -->
 
-<view mark:parentid="11" mark:name="tomm" bindtap="btnHandler">
-  <button mark:id="1" mark:name="tom">按钮</button>
-</view>
+<checkbox model:checked="{{ isChecked }}" />是否同意该协议
+<!-- 丢失响应式 -->
+<input type="text" model:value="{{obj.a}}"/>
